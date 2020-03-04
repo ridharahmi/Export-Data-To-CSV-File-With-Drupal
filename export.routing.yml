@@ -1,0 +1,15 @@
+export_content.downloadCustomers:
+  path: '/reports/downloadCustomers'
+  defaults:
+    _title: 'Download Customers'
+    _controller: '\Drupal\export\Controller\CSVController::downloadData'
+  requirements:
+    _permission: 'access content'
+ 
+export_content.listcsvreport:
+  path: '/reports/csv-report'
+  defaults:
+    _controller: '\Drupal\export\Controller\CSVReportsController::reports'
+    _title: 'List Data'
+  requirements:
+    _permission: 'access content'

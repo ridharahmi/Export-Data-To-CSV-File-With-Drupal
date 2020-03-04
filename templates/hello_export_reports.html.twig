@@ -1,0 +1,28 @@
+<section>
+    <div>
+        <a href="{{ path('export_content.downloadCustomers') }}" class="btn btn-primary btn-lg square" role="button">
+            Export
+        </a>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            {% for key,value in header_data %}
+                <th scope="col"> {{ value }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% set break = false %}
+        {% for key, value in record_data %}
+            {% for val in value|slice(0, 1) %}
+                <tr>
+                    <td scope="row">{{ value['id'] }}</td>
+                    <td>{{ value['nom'] }}</td>
+                    <td>{{ value['email'] }}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+</section>

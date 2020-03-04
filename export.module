@@ -1,0 +1,29 @@
+<?php
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ChangedCommand;
+use Drupal\Core\Ajax\CssCommand;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
+use Symfony\Component\HttpFoundation\Request;
+use Drupal\Core\Url;
+use Drupal\Core\Database\Database;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Language\Language;
+use \Symfony\Component\HttpFoundation\Response;
+
+
+/**
+ * Implements hook_theme().
+ */
+function export_theme($existing, $type, $theme, $path) {
+    return [
+        'hello_export_reports' => [
+            'variables' => [
+                'header_data' => NULL,
+                'record_data' => NULL
+            ],
+            'template' => 'hello_export_reports',
+        ],
+    ];
+}
